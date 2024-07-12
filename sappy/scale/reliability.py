@@ -7,6 +7,13 @@ import numpy as np
 
 def cronbach_alpha(data: np.ndarray[Any, Any]) -> np.float64:
     """
+    Calculate tht Cronbach's alpha coefficient for the given dataset.
+
+    Args:
+        data (np.ndarray): Dataset where rows are subjects and columns are variables.
+
+    Returns:
+        np.float64: The Cronbach's alpha coefficient.
     """
     x = data.copy()
 
