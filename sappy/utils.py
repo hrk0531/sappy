@@ -25,16 +25,6 @@ def mean(
     return mean
 
 
-def cov(data: np.ndarray[Any, Any]):
-    """
-    """
-    x = data.copy()
-
-    cov = np.cov(x, rowvar=False)
-
-    return cov
-
-
 def corr(data: np.ndarray[Any, Any]) -> np.ndarray[Any, Any]:
     """
     Calculate the correlation matrix of the input dataset.
