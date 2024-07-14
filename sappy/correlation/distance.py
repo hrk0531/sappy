@@ -25,27 +25,3 @@ def distance(data: np.ndarray[Any, Any], method: str = "euclidean") -> np.ndarra
                 dist_mtx[i, j] = np.linalg.norm(x[i] - x[j])
 
     return dist_mtx
-
-
-def mds(dist_mtx: np.ndarray[Any, Any], n_components: int) -> np.ndarray[Any, Any]:
-    """
-    """
-    d = dist_mtx.copy()
-
-    # The size of distance matrix
-    n_rows, n_cols = dist_mtx.shape
-
-    # H is the centering matrix
-    h = np.eye(n_rows) - np.ones((n_rows, n_rows)) / n_cols
-
-    # Initial karnel matrix
-    k = -0.5 * h.dot(d**2).dot(h)
-
-    eigvals, eigvecs = np.linalg.eigh(k)
-    idx = eigvals.argsort()[::-1]
-    eigvals_idx = eigvals[idx]
-    eigvecs_idx = eigvecs[:, idx]
-
-    x = eigvecs_idx[:, :n_components].T @ np.diag(np.sqrt(eigvals_idx[:n_components]))
-
-    return x
