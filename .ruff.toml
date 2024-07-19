@@ -1,0 +1,27 @@
+include = [
+    "*.py",
+    "*.ipynb"
+]
+
+line-length = 120
+respect-gitignore = true
+show-fixes = true
+
+[format]
+docstring-code-format = true
+docstring-code-line-length = 120
+quote-style = "double"
+skip-magic-trailing-comma = false
+
+[lint]
+select = [
+    "C90", # Check for complex functions
+    "E", # Error
+    "F", # Flake
+    "W", # Worning
+    "N", # pep8-naming
+    "I", # isort
+    "NPY", # NumPy rules
+    "S608"
+]
+fixable = ["ALL"]
