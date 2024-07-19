@@ -99,8 +99,6 @@ cython_debug/
 
 # Project-specific ignores
 .DS_Store
-mypy.ini
-.ruff.toml
 
 # Ignore data and model files
 data/
